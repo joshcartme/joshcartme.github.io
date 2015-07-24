@@ -7,6 +7,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://joshc.io" # the base hostname & protocol for your site
 twitter_username: joshcartme
 github_username:  joshcartme
+google_analytics_id: UA-31556206-10
 highlighter: pygments
 
 # Build settings
