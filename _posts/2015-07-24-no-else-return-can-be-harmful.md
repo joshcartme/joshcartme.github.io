@@ -5,9 +5,9 @@ date:   2015-07-23 19:25:28
 categories: javascript eslint
 ---
 
-**Update 7-24-15**:
+**Update 7-24-15:**
 
-I just found out this was a bug that was fixed 9 days ago.  [Check it out](https://github.com/eslint/eslint/issues/3015), and update your eslint!
+I just found out this was a bug that was fixed nine days ago.  [Check it out](https://github.com/eslint/eslint/issues/3015), and update your eslint!
 
 ### Consider:
 
