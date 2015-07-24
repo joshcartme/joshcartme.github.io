@@ -46,7 +46,7 @@ noElseAfterReturn(true, false);
 
 The output from the two functions is not the same, but don't take my word for it.
 
-<button id="run-script">Run the script!</button>
+<button class="btn btn-success" id="run-script">Run the script!</button>
 
 <pre><code id="script-output"></code></pre>
 

@@ -1,0 +1,74 @@
+    <!-- JQUERY -->
+    <script src="{{ "/js/jquery.min.js" | prepend: site.baseurl }}" ></script>
+    <!-- BOOTSTRAP -->
+    <script src="{{ "/js/bootstrap.min.js" | prepend: site.baseurl }}" ></script>
+    <!-- SCRIPTS -->
+    <script src="{{ "/js/scripts.js" | prepend: site.baseurl }}" ></script>
+
+    <script>
+    
+    var clientID = '1a0eb06fbd3f4399826e15731716acfe';
+    $(document).ready(function() {
+        $.ajax({
+            url: 'https://api.instagram.com/v1/users/45057554/media/recent/',
+            dataType: 'jsonp',
+            type: 'GET',
+            data: {client_id: clientID, count: 40},
+            success: function(data){
+                console.log(data);
+                for (i = 0; i < data.data.length; i++){
+                    $('.instagram-background').append("<img src='" + data.data[i].images.standard_resolution.url +"'>");
+                };
+            }, error: function(data){
+                console.log(data);
+            }
+        });
+        $('.toggle-feed').click(function(){
+            $('body').toggleClass('show-feed');
+            if(!$('body').hasClass('show-feed')){
+                $('body').removeClass('static-feed');
+            }
+        });
+        $('.insta-full').click(function(){
+            $('body').toggleClass('static-feed');
+        });
+        $('.show-twitter, .close-twitter').click(function(){
+            $('body').toggleClass('twitter-feeding');
+        });
+
+        if (!document.body.classList.contains('onHome')){
+            setTimeout(function(){
+                document.body.classList.add('header-left');
+            }, 100);
+        }
+    });
+    
+    </script>
+    <script>window.twttr = (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+     
+      t._e = [];
+      t.ready = function(f) {
+        t._e.push(f);
+      };
+     
+      return t;
+    }(document, "script", "twitter-wjs"));</script>
+    {% if site.google_analytics_id %}
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', '{{ site.google_analytics_id }}', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    {% endif %}

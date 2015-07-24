@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+    {% include head.html %}
+
+    <body class="onHome">
+        {% include header-widgets.html %}
+        <section id="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div id="photo-header" class="text-center">
+                            <!-- PHOTO (AVATAR) -->
+                            <div id="photo">
+                                <img src="/img/self_sq.jpg" alt="headshot">
+                            </div>
+                            <div id="text-header">
+                                <h1>{{ site.title }}<br> <span>{{ page.title }}</span>{% if page.subtitle %} {{ page.subtitle }}{% endif %}</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    {{ content }}
+                </div>
+            </div>
+        </section>
+
+        {% include footer-scripts.html %}
+
+    </body>
+
+</html>

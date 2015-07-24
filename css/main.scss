@@ -21,10 +21,10 @@ $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
+$red-color: #f0563d;
+
 $on-palm:          600px;
 $on-laptop:        800px;
-
-
 
 // Using media queries with like this:
 // @include media-query($palm) {
@@ -40,10 +40,20 @@ $on-laptop:        800px;
 }
 
 
+%vertical-rhythm {
+    margin-bottom: $spacing-unit / 2;
+}
+
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "base",
-        "layout",
-        "syntax-highlighting"
+        "syntax-highlighting",
+        "bootstrap.min",
+        "font-awesome",
+        "nav",
+        "joshcio"
 ;
+
+.inherit-color{
+    color: inherit;
+}

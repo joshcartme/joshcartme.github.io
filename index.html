@@ -1,45 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Joshua Cartmell | Frontend Engineer</title>
-    <link rel="shortcut icon" href="img/favicon.png">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.css" rel="stylesheet">
-    <link href="css/joshcio.css" rel="stylesheet">
-<!--[if lt IE 9]>
-<script src="js/html5shiv.js"></script>
-<script src="js/respond.min.js"></script>
-<![endif]-->
-</head>
-<body>
-    <div id="twitter-feed">
-        <button class="close-twitter btn-link"><i class="fa fa-times"></i></button>
-        <a class="twitter-timeline" href="https://twitter.com/joshcartme" data-widget-id="586321690604376064">Tweets by @joshcartme</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> </div>
-    <div class="instagram-background"><div class="overlay"></div></div>
-    <div class="icons">
-        <button class="insta-full btn btn-link"><i class="fa fa-long-arrow-down"></i><i class="fa fa-long-arrow-up"></i></button>
-        <button class="show-twitter btn btn-link"><i class="fa fa-twitter"></i></button>
-        <button class="toggle-feed btn btn-link"><i class="fa fa-adjust"></i></button>
-    </div>
-    <section id="content">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div id="photo-header" class="text-center">
-                        <!-- PHOTO (AVATAR) -->
-                        <div id="photo">
-                            <img src="img/self_sq.jpg" alt="headshot">
-                        </div>
-                        <div id="text-header">
-                            <h1>Joshua Cartmell<br> <span>Frontend Engineer</span> resume/cv</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
+---
+layout: home
+title: Frontend Engineer
+subtitle: Resume/CV
+inmenu: false
+---
                 <div class="col-xs-12 col-sm-7">
                     <!-- ABOUT ME -->
                     <div class="box">
@@ -288,74 +252,3 @@
                         </ul>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <!-- JQUERY -->
-    <script src="js/jquery.min.js"></script>
-    <!-- BOOTSTRAP -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- SCRIPTS -->
-    <script src="js/scripts.js"></script>
-
-    <script>
-    
-    var clientID = '1a0eb06fbd3f4399826e15731716acfe';
-    $(document).ready(function() {
-        $.ajax({
-            url: 'https://api.instagram.com/v1/users/45057554/media/recent/',
-            dataType: 'jsonp',
-            type: 'GET',
-            data: {client_id: clientID, count: 40},
-            success: function(data){
-                console.log(data);
-                for (i = 0; i < data.data.length; i++){
-                    $('.instagram-background').append("<img src='" + data.data[i].images.standard_resolution.url +"'>");
-                };
-            }, error: function(data){
-                console.log(data);
-            }
-        });
-        $('.toggle-feed').click(function(){
-            $('body').toggleClass('show-feed');
-            if(!$('body').hasClass('show-feed')){
-                $('body').removeClass('static-feed');
-            }
-        });
-        $('.insta-full').click(function(){
-            $('body').toggleClass('static-feed');
-        });
-        $('.show-twitter, .close-twitter').click(function(){
-            $('body').toggleClass('twitter-feeding');
-        });
-    });
-    
-    </script>
-    <script>window.twttr = (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0],
-        t = window.twttr || {};
-      if (d.getElementById(id)) return;
-      js = d.createElement(s);
-      js.id = id;
-      js.src = "https://platform.twitter.com/widgets.js";
-      fjs.parentNode.insertBefore(js, fjs);
-     
-      t._e = [];
-      t.ready = function(f) {
-        t._e.push(f);
-      };
-     
-      return t;
-    }(document, "script", "twitter-wjs"));</script>
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-31556206-10', 'auto');
-        ga('send', 'pageview');
-
-    </script>
-</body>
-</html>
