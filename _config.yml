@@ -1,0 +1,13 @@
+# Site settings
+title: Josh Cartmell
+email: chat@joshc.io
+description: > # this means to ignore newlines until "baseurl:"
+  Python, Django, Mezzanine, Javascript.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "https://joshc.io" # the base hostname & protocol for your site
+twitter_username: joshcartme
+github_username:  joshcartme
+highlighter: pygments
+
+# Build settings
+markdown: kramdown
