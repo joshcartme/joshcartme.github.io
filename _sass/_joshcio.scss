@@ -43,6 +43,10 @@ html {
 }
 .default-content {
   font-size: 1.4em;
+  .post-link{
+    font-family: 'courier', monospace;
+    background-color: $base2;
+  }
 }
 .icons {
   position: fixed;
