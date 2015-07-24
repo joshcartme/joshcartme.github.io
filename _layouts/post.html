@@ -20,6 +20,7 @@ comments: true
         var disqus_shortname = 'bitofpixels';
         var disqus_identifier = 'joshc.io-{{ page.date | date_to_string | slugify }}';
         var disqus_title = '{{ page.title }}';
+        var disqus_url = '{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}';
 
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {
