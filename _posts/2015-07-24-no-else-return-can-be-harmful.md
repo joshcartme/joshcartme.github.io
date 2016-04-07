@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post_with_comments
 title: no-else-return can be harmful
 date:   2015-07-23 19:25:28
 categories: javascript eslint
