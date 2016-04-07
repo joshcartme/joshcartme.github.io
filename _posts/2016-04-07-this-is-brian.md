@@ -1,7 +1,7 @@
 ---
 layout: post
 title: this is Brian
-date:   2016-04-07 19:25:28
+date:   2016-04-07 09:00:00
 categories: reflections
 comments: false
 ---
